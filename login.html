@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PostIt - Log in</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PostIt - Log in</title>
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <iframe src="nav.html" width="100%" style="border:none;"></iframe>
+        <div class="loginWrapper">
+        <div>
+            <h3>Welcome to PostIt</h3>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Create an account</a><br>
+            <span>or</span><br>
+            <span>Please log in</span>
+        </div>
+
+            <form>
+                <input type="email" placeholder="Email" id="emailInput"
+                    required>
+                <span class="errorMessage" id="emailErrorMessage">This is not a valid email</span>
+                <input type="password" placeholder="Password" id="passwordInput"
+                    required>
+                <span class="errorMessage" id="pwErrorMessage">The password
+                    must contain 8-16 characters and no whitespace characters</span>
+
+                <input class="submitButton" id="submitButton" type="button"
+                    value="Log in" onClick="login(event)">
+            </form>
+
+            <a class="help" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Forgot password</a>
+        </div>
+    </body>
+    <script>
+    function login(event) {
+    
+        const email = document.getElementById("emailInput")
+        const password = document.getElementById("passwordInput")
+
+        const regex_email = new RegExp('^\\S+@\\S+\\.\\S+$', 'i');
+        const regex_pw = new RegExp('\\S', 'i');
+
+        if (!regex_email.test(email.value)) {
+            document.getElementById("emailErrorMessage").style.visibility='visible';
+            email.style.color='red';
+            return;
+        }
+        email.style.color='black';
+        document.getElementById("emailErrorMessage").style.visibility='hidden';
+
+        console.log(password.value);
+        if (!regex_pw.test(password.value) || password.value.length < 8 || password.value.legnth > 16) {
+            document.getElementById("pwErrorMessage").style.visibility='visible';
+            password.style.color='red';
+            return;
+        }
+        document.getElementById("pwErrorMessage").style.visibility='hidden';
+        password.style.color='black';
+        
+        navigation.navigate('index.html')
+    }
+</script>
 </html>

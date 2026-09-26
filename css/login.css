@@ -1,0 +1,43 @@
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: lightgrey;
+  border-radius: 20px;
+  margin: 30%;
+  padding-bottom: 10px;
+}
+
+.loginWrapper>* {
+  /*child selector*/
+  display: flexbox;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.loginWrapper form {
+  /*descendant selector*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a:link {
+  /*pseudo element*/
+  text-decoration: none;
+}
+
+input+.errorMessage {
+  /* adjacent*/
+  visibility: hidden;
+  color: red;
+  text-align: center;
+}
+
+span~.submitButton {
+  /* general sibling selector*/
+  background: blue;
+  color: white;
+}
