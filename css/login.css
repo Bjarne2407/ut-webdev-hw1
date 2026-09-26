@@ -6,10 +6,15 @@
   text-align: center;
   background: lightgrey;
   border-radius: 20px;
-  margin: 30%;
+  margin: 0 30%;
   padding-bottom: 10px;
 }
 
+@media (max-width: 400px) {
+  .loginWrapper {
+    margin: 0;
+  }
+}
 .loginWrapper>* {
   /*child selector*/
   display: flexbox;
