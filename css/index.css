@@ -12,6 +12,39 @@ main > aside {
   flex: 3;
 }
 
+.feed > article {
+  background: lightgrey;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+article + article {
+  margin-top: 10px;
+}
+
+article > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+article > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article > button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
 body > footer {
   padding: 10px 20px;
   text-align: center;
