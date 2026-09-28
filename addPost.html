@@ -8,5 +8,17 @@
     <link rel="stylesheet" href="css/addPost.css">
 </head>
 <body>
+    <iframe src="nav.html" style="border:none; width:100%; height:100px;"></iframe>
+    <main>
+        <section class="addPostWrapper">
+            <form action="index.html">
+                <label for="postDescription">Post body</label>
+                <textarea id="postDescription" name="postDescription" required placeholder="Write your post description here..."></textarea>
+                <label for="fileChooser">Select file</label>
+                <input type="file" id="fileChooser" name="fileChooser">
+                <input type="submit" value="Create post">
+            </form>
+        </section>
+    </main>
 </body>
 </html>

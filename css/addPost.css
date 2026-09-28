@@ -1,0 +1,76 @@
+.addPostWrapper {
+    background: lightgrey;
+    border-radius: 20px;
+    margin: 0 25%;
+}
+
+.addPostWrapper h2 {
+    margin: 0;
+    padding: 20px 20px 0;
+}
+
+.addPostWrapper > form {
+    /* child selector */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 15px 10px;
+    padding: 20px;
+}
+
+form label {
+    /* descendant selector */
+    flex: 0 0 90px;
+    padding-top: 4px;
+}
+
+form textarea,
+form input[type="file"] {
+    flex: 1 1 calc(100% - 100px);
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+    padding: 6px;
+}
+
+label + input[type="file"]::file-selector-button {
+    /* adjacent sibling selector + pseudo-element */
+    background: grey;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+label ~ input[type="submit"] {
+    /* general sibling selector */
+    margin-left: auto;
+    padding: 6px 16px;
+    background: darkblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    /* pseudo-class */
+    background: blue;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .addPostWrapper {
+        margin: 0 10px;
+    }
+
+    form label {
+        flex-basis: 100%;
+    }
+}
