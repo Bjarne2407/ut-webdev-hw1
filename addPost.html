@@ -19,15 +19,15 @@
     <main>
       <section class="addPostWrapper">
         <form action="index.html">
-          <label for="postDescription">Post body</label>
+          <label for="postBody">Post Body</label>
           <textarea
-            id="postDescription"
-            name="postDescription"
+            id="postBody"
+            name="postBody"
+            placeholder="Write your post here..."
             required
-            placeholder="Write your post description here..."
-          ></textarea>
+            ></textarea>
           <label for="fileChooser">Select file</label>
-          <input type="file" id="fileChooser" name="fileChooser" />
+          <input type="file" id="fileChooser" name="fileChooser" accept="image/*"/>
           <input type="submit" value="Create post" />
         </form>
       </section>
