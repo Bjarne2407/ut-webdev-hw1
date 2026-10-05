@@ -18,7 +18,7 @@
     </header>
     <main>
       <section class="addPostWrapper">
-        <form action="index.html">
+        <form action="index.html" novalidate onsubmit="return createPost()">
           <label for="postBody">Post Body</label>
           <textarea
             id="postBody"
@@ -26,11 +26,27 @@
             placeholder="Write your post here..."
             required
             ></textarea>
+          <p class="errorMessage" id="postBodyErrorMessage">
+            Please enter a post body!
+          </p>
           <label for="fileChooser">Select file</label>
           <input type="file" id="fileChooser" name="fileChooser" accept="image/*"/>
           <input type="submit" value="Create post" />
         </form>
       </section>
     </main>
+    <script>
+      function createPost() {
+        const postBody = document.getElementById("postBody");
+        const errorMessage = document.getElementById("postBodyErrorMessage");
+
+        if (postBody.value.trim() === "") {
+          errorMessage.style.display = "block";
+          postBody.style.borderColor = "red";
+          return false;
+        }
+        return true;
+      }
+    </script>
   </body>
 </html>
