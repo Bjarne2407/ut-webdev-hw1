@@ -7,7 +7,7 @@ PostIt is a small made-up social feed. It's only HTML and CSS, so nothing gets
 saved and the buttons just take you back to the feed. The point of the
 homework is the markup and the styling.
 
-Live site: <https://bjarne2407.github.io/ut-webdev-hw1/>
+Live site: <https://bjarne2407.github.io/ut-webdev-hw1/login>
 
 ## Pages
 
