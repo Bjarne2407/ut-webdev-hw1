@@ -57,37 +57,39 @@
         >Forgot password</a
       >
     </section>
-  </body>
-  <script>
-    function login() {
-      const email = document.getElementById("emailInput");
-      const password = document.getElementById("passwordInput");
+    <script>
+      function login() {
+        const email = document.getElementById("emailInput");
+        const password = document.getElementById("passwordInput");
 
-      const regex_email = new RegExp("^\\S+@\\S+\\.\\S+$", "i");
-      const regex_pw = new RegExp("\\S", "i");
+        const regex_email = new RegExp("^\\S+@\\S+\\.\\S+$", "i");
+        const regex_pw = new RegExp("^\\S+$");
 
-      if (!regex_email.test(email.value)) {
+        if (!regex_email.test(email.value)) {
+          document.getElementById("emailErrorMessage").style.visibility =
+            "visible";
+          email.style.color = "red";
+          return;
+        }
+        email.style.color = "black";
         document.getElementById("emailErrorMessage").style.visibility =
-          "visible";
-        email.style.color = "red";
-        return;
-      }
-      email.style.color = "black";
-      document.getElementById("emailErrorMessage").style.visibility = "hidden";
+          "hidden";
 
-      if (
-        !regex_pw.test(password.value) ||
-        password.value.length < 8 ||
-        password.value.legnth > 16
-      ) {
-        document.getElementById("pwErrorMessage").style.visibility = "visible";
-        password.style.color = "red";
-        return;
-      }
-      document.getElementById("pwErrorMessage").style.visibility = "hidden";
-      password.style.color = "black";
+        if (
+          !regex_pw.test(password.value) ||
+          password.value.length < 8 ||
+          password.value.length > 16
+        ) {
+          document.getElementById("pwErrorMessage").style.visibility =
+            "visible";
+          password.style.color = "red";
+          return;
+        }
+        document.getElementById("pwErrorMessage").style.visibility = "hidden";
+        password.style.color = "black";
 
-      navigation.navigate("index.html");
-    }
-  </script>
+        navigation.navigate("index.html");
+      }
+    </script>
+  </body>
 </html>

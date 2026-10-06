@@ -10,16 +10,14 @@
   padding-bottom: 10px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .loginWrapper {
-    margin: 0;
+    margin: 20px 10px 0;
   }
 }
 
-.loginWrapper>* {
+.loginWrapper > * {
   /*child selector*/
-  display: flexbox;
-  flex-direction: column;
   padding: 20px;
 }
 
@@ -31,18 +29,18 @@
 }
 
 a:link {
-  /*pseudo element*/
+  /*pseudo class*/
   text-decoration: none;
 }
 
-input+.errorMessage {
+input + .errorMessage {
   /* adjacent*/
   visibility: hidden;
   color: red;
   text-align: center;
 }
 
-span~.submitButton {
+input ~ .submitButton {
   /* general sibling selector*/
   background: blue;
   color: white;
