@@ -16,47 +16,50 @@
         <img src="res/avatar.svg" width="50" height="50" alt="Your profile" />
       </a>
     </header>
-    <section class="loginWrapper">
-      <header>
-        <h3>Welcome to PostIt</h3>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
-          >Create an account</a
-        ><br />
-        <span>or</span><br />
-        <span>Please log in</span>
-      </header>
+    <main>
+      <section class="loginWrapper">
+        <header>
+          <h3>Welcome to PostIt</h3>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+            >Create an account</a
+          ><br />
+          <span>or</span><br />
+          <span>Please log in</span>
+        </header>
 
-      <form>
-        <input type="email" placeholder="Email" id="emailInput" required />
-        <p class="errorMessage" id="emailErrorMessage">
-          This is not a valid email
-        </p>
-        <input
-          type="password"
-          placeholder="Password"
-          id="passwordInput"
-          required
-        />
-        <p class="errorMessage" id="pwErrorMessage">
-          The password must contain 8-16 characters and no whitespace characters
-        </p>
+        <form>
+          <input type="email" placeholder="Email" id="emailInput" required />
+          <p class="errorMessage" id="emailErrorMessage">
+            This is not a valid email
+          </p>
+          <input
+            type="password"
+            placeholder="Password"
+            id="passwordInput"
+            required
+          />
+          <p class="errorMessage" id="pwErrorMessage">
+            The password must contain 8-16 characters and no whitespace
+            characters
+          </p>
 
-        <input
-          class="submitButton"
-          id="submitButton"
-          type="button"
-          value="Log in"
-          onClick="login()"
-        />
-      </form>
+          <input
+            class="submitButton"
+            id="submitButton"
+            type="button"
+            value="Log in"
+            onClick="login()"
+          />
+        </form>
 
-      <a
-        class="help"
-        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        target="_blank"
-        >Forgot password</a
-      >
-    </section>
+        <a
+          class="help"
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          target="_blank"
+          >Forgot password</a
+        >
+      </section>
+    </main>
     <script>
       function login() {
         const email = document.getElementById("emailInput");
