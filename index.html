@@ -20,66 +20,72 @@
     </header>
     <main>
       <aside></aside>
-      <section class="feed">
-        <article>
-          <header>
-            <img src="res/avatar.svg" width="24" height="24" alt="" />
-            <time datetime="2026-09-26">Sep 26, 2026</time>
-          </header>
-          <img
-            src="res/img/bikes.jpeg"
-            alt="Road bike leaning against straw bales in a field"
-          />
-          <p>
-            Where do you buy a used bike here? Mine got stolen after two weeks.
-          </p>
-          <button type="button" aria-label="Like">👍</button>
-        </article>
-        <article>
-          <header>
-            <img src="res/avatar.svg" width="24" height="24" alt="" />
-            <time datetime="2026-09-21">Sep 21, 2026</time>
-          </header>
-          <p>Anyone knows in which room the lab is today?</p>
-          <button type="button" aria-label="Like">👍</button>
-        </article>
-        <article>
-          <header>
-            <img src="res/avatar.svg" width="24" height="24" alt="" />
-            <time datetime="2026-09-19">Sep 19, 2026</time>
-          </header>
-          <img
-            src="res/img/raekoja-plats.jpeg"
-            alt="Tartu town hall on a sunny day"
-          />
-          <p>
-            Raekoja plats in the morning, still can't believe I live here now.
-          </p>
-          <button type="button" aria-label="Like">👍</button>
-        </article>
-        <article>
-          <header>
-            <img src="res/avatar.svg" width="24" height="24" alt="" />
-            <time datetime="2026-09-12">Sep 12, 2026</time>
-          </header>
-          <p>
-            Anyone up for a weekend trip to Kuressaare? We have two seats left
-            in the car.
-          </p>
-          <button type="button" aria-label="Like">👍</button>
-        </article>
-        <article>
-          <header>
-            <img src="res/avatar.svg" width="24" height="24" alt="" />
-            <time datetime="2026-09-03">Sep 3, 2026</time>
-          </header>
-          <img
-            src="res/img/delta.jpeg"
-            alt="The Delta building by the Emajõgi river"
-          />
-          <p>First day at Delta. The building is huge and I got lost twice.</p>
-          <button type="button" aria-label="Like">👍</button>
-        </article>
+      <section class="feed"  id="mainFeed">
+        <script>
+          //const path = "db/post_db.json"
+          
+          const url = "https://www.jsonkeeper.com/b/OHQ2C"
+          fetch(url, {
+              method: 'GET',
+              mode: 'cors',
+            }).then((response) => response.json())
+            .then((data) => { 
+              const posts = data["posts"]
+
+              posts.forEach(post => {
+                const authorName = post["authorName"]
+                const createdAt = post["createdAt"]
+                const description = post["description"]
+                
+                const article = document.createElement("article");
+                
+                const header = document.createElement("header");
+                
+                const profilePicture = new Image(24);
+                profilePicture.src = "res/avatar.svg";
+                header.appendChild(profilePicture);
+
+                const time = document.createElement("time")
+                time.dateTime = createdAt
+                dateString = document.createTextNode(new Date(createdAt).toLocaleDateString('en-US', {
+                  month: 'long',
+                  day: '2-digit',
+                  year: 'numeric'
+                }));
+                time.appendChild(dateString);
+                header.appendChild(time)
+                
+                article.appendChild(header);
+
+                console.log(post)
+                if (post["containsImage"]) {
+                  // decode image - "base64encodedImage"
+                  const imgData = new Image();
+                  let uri = post["base64encodedImage"];
+                  // if (!uri.startsWith("data:image/jpeg;base64")) {
+                  //   uri = "data:image/jpeg;base64," + uri
+                  // }
+                  
+                  imgData.src = uri
+                   
+                  article.appendChild(imgData);
+                }
+
+                const p = document.createElement("p")
+                const postDescription = document.createTextNode(description)
+                p.appendChild(postDescription)
+                article.appendChild(p)
+                
+                const button = document.createElement("button");
+                const like = document.createTextNode("👍")
+                button.appendChild(like)
+                article.appendChild(button)
+
+                const element = document.getElementById("mainFeed");
+                element.appendChild(article);
+              });
+            })
+        </script>
       </section>
       <aside></aside>
     </main>
