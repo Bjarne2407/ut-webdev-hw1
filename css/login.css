@@ -1,19 +1,14 @@
 .loginWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  background: lightgrey;
-  border-radius: 20px;
-  margin: 2rem 30%;
+  max-width: 360px;
+  margin: 40px auto 0;
   padding-bottom: 10px;
-}
-
-@media (max-width: 600px) {
-  .loginWrapper {
-    margin: 20px 10px 0;
-  }
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .loginWrapper > * {
@@ -21,11 +16,42 @@
   padding: 20px;
 }
 
+.loginWrapper h3 {
+  margin: 0 0 10px;
+  font-size: 1.4em;
+}
+
+.loginWrapper header a {
+  /*descendant selector*/
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.loginWrapper header span {
+  color: #65676b;
+}
+
 .loginWrapper form {
   /*descendant selector*/
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-self: stretch;
+  padding-top: 0;
+}
+
+.loginWrapper input[type="email"],
+.loginWrapper input[type="password"] {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.loginWrapper input:focus {
+  /*pseudo class*/
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #e7f0fe;
 }
 
 a:link {
@@ -36,12 +62,33 @@ a:link {
 input + .errorMessage {
   /* adjacent*/
   visibility: hidden;
-  color: red;
-  text-align: center;
+  margin: 5px 0 10px;
+  color: #d93025;
+  font-size: 0.85em;
 }
 
 input ~ .submitButton {
   /* general sibling selector*/
-  background: blue;
+  padding: 10px;
+  background: #2563eb;
   color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submitButton:hover {
+  background: #1d4ed8;
+}
+
+.help {
+  color: #65676b;
+  font-size: 0.9em;
+}
+
+.help:hover {
+  text-decoration: underline;
 }
