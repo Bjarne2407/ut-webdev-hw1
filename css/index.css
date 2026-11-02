@@ -44,11 +44,20 @@ article > header {
   align-items: center;
 }
 
+article > header time {
+  font-size: 0.8em;
+}
+
 article > button {
   background: none;
   border: none;
   font-size: 1.2em;
   cursor: pointer;
+}
+
+article > button:hover {
+  background: darkgrey;
+  border-radius: 10px;
 }
 
 body > footer {
