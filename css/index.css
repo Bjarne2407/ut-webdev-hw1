@@ -60,11 +60,6 @@ article > button:hover {
   border-radius: 10px;
 }
 
-body > footer {
-  padding: 10px 20px;
-  text-align: center;
-}
-
 @media (max-width: 600px) {
   main > aside {
     display: none;
@@ -75,6 +70,7 @@ body > footer {
   background: lightgrey;
   border-radius: 20px;
   padding: 10px 20px;
+  text-align: center;
 }
 
 .avatar {
