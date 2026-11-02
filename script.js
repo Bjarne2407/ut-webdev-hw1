@@ -51,11 +51,11 @@ fetch(datapath)
             const element = document.getElementById("mainFeed");
             element.appendChild(article);
         });
-        const avatarImg = document.getElementById("avatarImg");
-        
+    })
+
+const avatarImg = document.getElementById("avatarImg");
 const profileMenu = document.getElementById("profileMenu");
 
 avatarImg.addEventListener("click", function () {
     profileMenu.classList.toggle("open");
 });
-    })
